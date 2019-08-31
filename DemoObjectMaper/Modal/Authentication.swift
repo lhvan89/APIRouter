@@ -1,5 +1,5 @@
 //
-//  AuthenRespone.swift
+//  Authentication.swift
 //  DemoObjectMaper
 //
 //  Created by mac on 8/23/19.
@@ -9,24 +9,24 @@
 import Foundation
 import ObjectMapper
 
-class AuthenRespone: Mappable {
-    var accessToken: String?
-    var encryptedAccessToken: String?
-    var expireInSeconds: Int?
-    var shouldResetPassword: Bool?
+class Authentication: Mappable {
+    var accessToken: String = ""
+    var encryptedAccessToken: String = ""
+    var expireInSeconds: Int = 0
+    var shouldResetPassword: Bool = false
     var passwordResetCode: String?
-    var userId: Int?
-    var fullName: String?
-    var phoneNumber: String?
-    var emailAddress: String?
-    var profilePicture: String?
-    var tenantId: Int?
-    var requiresTwoFactorVerification: Bool?
+    var userId: Int = 0
+    var fullName: String = ""
+    var phoneNumber: String = ""
+    var emailAddress: String = ""
+    var profilePicture: String = ""
+    var tenantId: Int = 0
+    var requiresTwoFactorVerification: Bool = false
     var twoFactorAuthProviders: [String]?
     var twoFactorRememberClientToken: String?
     var returnUrl: String?
-    var refreshToken: String?
-    var mustChooseTenant: Bool?
+    var refreshToken: String = ""
+    var mustChooseTenant: Bool = false
     var tenants: [Tenant]?
     
     required init?(map: Map) {

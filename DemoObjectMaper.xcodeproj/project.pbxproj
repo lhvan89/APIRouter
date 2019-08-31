@@ -14,11 +14,13 @@
 		041DF6A6230F015500B1CD1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041DF6A4230F015500B1CD1A /* LaunchScreen.storyboard */; };
 		041DF6AF230F02A700B1CD1A /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF6AE230F02A700B1CD1A /* BaseResponse.swift */; };
 		041DF6B1230F031100B1CD1A /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF6B0230F031100B1CD1A /* ErrorResponse.swift */; };
-		041DF6B3230F06B600B1CD1A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF6B2230F06B600B1CD1A /* APIManager.swift */; };
-		041DF6B5230F0F4700B1CD1A /* AuthenRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF6B4230F0F4700B1CD1A /* AuthenRespone.swift */; };
+		041DF6B3230F06B600B1CD1A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF6B2230F06B600B1CD1A /* DataManager.swift */; };
+		041DF6B5230F0F4700B1CD1A /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041DF6B4230F0F4700B1CD1A /* Authentication.swift */; };
 		043A3ACA23104D120086FC13 /* Tenant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A3AC923104D120086FC13 /* Tenant.swift */; };
 		043A3ACC231057B90086FC13 /* Data+prettyPrintedJSONString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A3ACB231057B90086FC13 /* Data+prettyPrintedJSONString.swift */; };
 		5F74DF69647D9C91BB9A9D86 /* Pods_DemoObjectMaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9CFB6E8A41508DD7ECBC48 /* Pods_DemoObjectMaper.framework */; };
+		D4A6D5DD231A599C00DBD0D5 /* AuthenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A6D5DC231A599C00DBD0D5 /* AuthenManager.swift */; };
+		D4A6D5DF231A61F500DBD0D5 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A6D5DE231A61F500DBD0D5 /* Status.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,12 +33,14 @@
 		041DF6A7230F015500B1CD1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		041DF6AE230F02A700B1CD1A /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		041DF6B0230F031100B1CD1A /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
-		041DF6B2230F06B600B1CD1A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		041DF6B4230F0F4700B1CD1A /* AuthenRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenRespone.swift; sourceTree = "<group>"; };
+		041DF6B2230F06B600B1CD1A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		041DF6B4230F0F4700B1CD1A /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		043A3AC923104D120086FC13 /* Tenant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tenant.swift; sourceTree = "<group>"; };
 		043A3ACB231057B90086FC13 /* Data+prettyPrintedJSONString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+prettyPrintedJSONString.swift"; sourceTree = "<group>"; };
 		AE08FF99636EF895F703E5F0 /* Pods-DemoObjectMaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoObjectMaper.debug.xcconfig"; path = "Target Support Files/Pods-DemoObjectMaper/Pods-DemoObjectMaper.debug.xcconfig"; sourceTree = "<group>"; };
 		AF96F030F53BED1301E7E672 /* Pods-DemoObjectMaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoObjectMaper.release.xcconfig"; path = "Target Support Files/Pods-DemoObjectMaper/Pods-DemoObjectMaper.release.xcconfig"; sourceTree = "<group>"; };
+		D4A6D5DC231A599C00DBD0D5 /* AuthenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenManager.swift; sourceTree = "<group>"; };
+		D4A6D5DE231A61F500DBD0D5 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		DD9CFB6E8A41508DD7ECBC48 /* Pods_DemoObjectMaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoObjectMaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,8 +95,8 @@
 			children = (
 				041DF6AE230F02A700B1CD1A /* BaseResponse.swift */,
 				041DF6B0230F031100B1CD1A /* ErrorResponse.swift */,
-				041DF6B2230F06B600B1CD1A /* APIManager.swift */,
-				041DF6B4230F0F4700B1CD1A /* AuthenRespone.swift */,
+				041DF6B2230F06B600B1CD1A /* DataManager.swift */,
+				D4A6D5DC231A599C00DBD0D5 /* AuthenManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -101,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				043A3AC923104D120086FC13 /* Tenant.swift */,
+				041DF6B4230F0F4700B1CD1A /* Authentication.swift */,
+				D4A6D5DE231A61F500DBD0D5 /* Status.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -247,12 +253,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				041DF6AF230F02A700B1CD1A /* BaseResponse.swift in Sources */,
+				D4A6D5DF231A61F500DBD0D5 /* Status.swift in Sources */,
 				041DF69E230F015400B1CD1A /* ViewController.swift in Sources */,
 				041DF69C230F015400B1CD1A /* AppDelegate.swift in Sources */,
 				043A3ACA23104D120086FC13 /* Tenant.swift in Sources */,
 				041DF6B1230F031100B1CD1A /* ErrorResponse.swift in Sources */,
-				041DF6B3230F06B600B1CD1A /* APIManager.swift in Sources */,
-				041DF6B5230F0F4700B1CD1A /* AuthenRespone.swift in Sources */,
+				041DF6B3230F06B600B1CD1A /* DataManager.swift in Sources */,
+				041DF6B5230F0F4700B1CD1A /* Authentication.swift in Sources */,
+				D4A6D5DD231A599C00DBD0D5 /* AuthenManager.swift in Sources */,
 				043A3ACC231057B90086FC13 /* Data+prettyPrintedJSONString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DemoObjectMaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -419,6 +428,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DemoObjectMaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

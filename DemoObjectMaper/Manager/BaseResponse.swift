@@ -11,16 +11,16 @@ import ObjectMapper
 
 class BaseResponse<T: Mappable>: Mappable {
     var result: T?
-    var success: Bool?
+    var success: Bool = false
     var error: ErrorResponse?
-    var unAuthorizedRequest: Bool?
+    var unAuthorizedRequest: Bool = false
     
     required init?(map: Map) {}
     
     func mapping(map: Map) {
-        result <- map["result"]
-        success <- map["success"]
-        error <- map["error"]
+        result              <- map["result"]
+        success             <- map["success"]
+        error               <- map["error"]
         unAuthorizedRequest <- map["unAuthorizedRequest"]
     }
 }
