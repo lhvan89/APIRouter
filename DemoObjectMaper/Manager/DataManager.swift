@@ -17,7 +17,7 @@ class DataManager {
         return NetworkReachabilityManager()!.isReachable
     }
     
-    static func executeRequest<T: Mappable>(_ returnType: T.Type, completionHandle: @escaping ((_ status: Status, _ result: T?) -> Void)) {
+    static func executeRequest<T: Mappable>(_ apiRouter: AuthenRouter, _ returnType: T.Type, completionHandle: @escaping ((_ status: Status, _ result: T?) -> Void)) {
         
         if !isConnectedToInternet() {
             print("Không có kết nối")
@@ -25,11 +25,7 @@ class DataManager {
             return
         }
         
-        let url = "http://oplusapi.itpsolution.net/api/TokenAuth/Authenticate"
-        let method: HTTPMethod = .post
-        let parameters: Parameters = ["userNameOrEmailAddress": "vanlh@itpsolution.nett", "password": "Thu234567#"]
-        let headers: HTTPHeaders = ["Content-Type": "application/json"]
-        Alamofire.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseObject { (response: DataResponse<BaseResponse<T>>) in
+        Alamofire.request(apiRouter).responseObject { (response: DataResponse<BaseResponse<T>>) in
             
             #if DEBUG
             guard let data = response.data, let dataJson = String(data: data, encoding: .utf8) else {return }
@@ -39,9 +35,9 @@ class DataManager {
                 return
             }
             print("====================")
-            print("url =", url)
-            print("headers =", headers)
-            print("parameters =", parameters)
+            print("url =", apiRouter.path)
+            print("headers =", apiRouter.headers)
+            print("parameters =", apiRouter.parameters)
             print("response =", jsonResponse)
             print("====================")
             #endif

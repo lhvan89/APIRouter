@@ -1,5 +1,5 @@
 //
-//  APIRouting.swift
+//  AuthenticationRouter.swift
 //  DemoObjectMaper
 //
 //  Created by Van Le on 8/31/19.
@@ -9,8 +9,9 @@
 import Foundation
 import Alamofire
 
-enum Router: URLRequestConvertible {
-    case login(parameters: Parameters)
+enum AuthenRouter: URLRequestConvertible {
+    
+    case login(_ phoneOrEmail: String, _ password: String)
     
     static let baseURLString = "http://oplusapi.itpsolution.net"
     
@@ -37,8 +38,19 @@ enum Router: URLRequestConvertible {
         return headers
     }
     
+    var parameters: Parameters {
+        switch self {
+        case .login(let phoneOrEmail, let password):
+            return [
+                "userNameOrEmailAddress": phoneOrEmail,
+                "password": password
+            ]
+        }
+    }
+    
     func asURLRequest() throws -> URLRequest {
-        let url = try Router.baseURLString.asURL()
+        
+        let url = try AuthenRouter.baseURLString.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
@@ -48,9 +60,10 @@ enum Router: URLRequestConvertible {
         }
         
         switch self {
-        case .login(let parameters):
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+        case .login:
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: parameters)
         }
+        
         return urlRequest
     }
 }
