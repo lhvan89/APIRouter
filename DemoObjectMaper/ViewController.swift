@@ -12,9 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    func login() {
         print("Show loading")
         DataManager.executeRequest(Authentication.self) { [weak self] (status, result) in
-//            guard let strongSelf = self else { return }
             print("Hide loading")
             switch status {
             case .success:
