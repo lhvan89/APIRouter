@@ -14,7 +14,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        Manager.executeRequest(<#T##returnType: Mappable.Protocol##Mappable.Protocol#>, completionHandle: <#T##((Mappable?) -> Void)##((Mappable?) -> Void)##(Mappable?) -> Void#>)
+        APIManager.executeRequest(AuthenRespone.self) { [weak self] (result) in
+            guard let strongSelf = self else { return }
+            guard let result = result else { return }
+            print(result.accessToken ?? "")
+            
+            guard let tennants = result.tenants else { return }
+            print(tennants[0].tenancyName ?? "")
+        }
     }
 
 
